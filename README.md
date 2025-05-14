@@ -37,6 +37,7 @@ npm run start:gateway
 - POST `/auth/login` - User login
 - GET `/auth/profile` - Get user profile
 - POST `/auth/change-password` - Update password
+- Get `/auth/users` - Update password
 
 ## Environment Variables
 
