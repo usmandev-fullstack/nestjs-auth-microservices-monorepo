@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/nestjs-auth-microservices-monorepo/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/nestjs-auth-microservices-monorepo/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/nestjs-auth-microservices-monorepo",
+  "projects": {
+    "authentication": {
+      "type": "application",
+      "root": "apps/authentication",
+      "entryFile": "main",
+      "sourceRoot": "apps/authentication/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/authentication/tsconfig.app.json"
+      }
+    },
+    "gateway": {
+      "type": "application",
+      "root": "apps/gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/gateway/tsconfig.app.json"
+      }
+    },
+    "nestjs-auth-microservices-monorepo": {
+      "type": "application",
+      "root": "apps/nestjs-auth-microservices-monorepo",
+      "entryFile": "main",
+      "sourceRoot": "apps/nestjs-auth-microservices-monorepo/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/nestjs-auth-microservices-monorepo/tsconfig.app.json"
+      }
+    }
+  }
+}
