@@ -43,13 +43,9 @@ npm run start:gateway
 
 Required environment variables in `.env`:
 - `MONGODB_URI`: MongoDB connection string
-- `JWT_SECRET`: Secret for JWT tokens
-- `AUTH_SERVICE_PORT`: Auth service port (default: 3001)
-- `GATEWAY_SERVICE_PORT`: Gateway port (default: 3000)
-
 ## Tech Stack
 
 - NestJS
 - MongoDB with Mongoose
 - JWT Authentication
-- Microservices Communication
+- Microservices Communication TCP
