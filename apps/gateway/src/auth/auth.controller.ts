@@ -7,11 +7,13 @@ import { UserDto } from '../../../common/core/dto/user.dto';
 import { ErrorResponseDto } from '../../../common/core/dto/error-response.dto';
 import { AuthService } from './auth.service';
 
+// Main authentication controller - handles all auth-related HTTP requests
 @ApiTags('auth')
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
+  // Create new user account
   @Post('register')
   @ApiOperation({
     summary: 'Register a new user',
@@ -84,6 +86,7 @@ export class AuthController {
     return this.authService.register(createUserDto);
   }
 
+  // Get list of all users - admin only
   @Get('users')
   @ApiOperation({ summary: 'Get all users' })
   @ApiResponse({ 
@@ -95,6 +98,7 @@ export class AuthController {
     return this.authService.getUsers();
   }
 
+  // Authenticate user and get access token
   @Post('login')
   @ApiOperation({ summary: 'User login' })
   @ApiBody({ type: LoginDto })
@@ -111,6 +115,7 @@ export class AuthController {
     return this.authService.login(loginDto);
   }
 
+  // Update user's password securely
   @Put('users/:id/password')
   @ApiOperation({ summary: 'Change user password' })
   @ApiBody({ type: ChangePasswordDto })
@@ -137,6 +142,7 @@ export class AuthController {
     return this.authService.changePassword(userId, changePasswordDto);
   }
 
+  // Get user's profile information
   @Get('users/:id/profile')
   @ApiOperation({ summary: 'Get user profile' })
   @ApiResponse({ 
